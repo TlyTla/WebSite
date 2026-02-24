@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0a0a0a;
+    --surface-color: #141414;
+    --primary-text: #ffffff;
+    --secondary-text: #a0a0a0;
+    --accent-color: #8a2be2;
+    --accent-glow: rgba(138, 43, 226, 0.4);
+    --border-color: #2a2a2a;
+    --bg-color-icon: #333;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+}
+
+/*кнопка aside */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    width: 30px;
+    height: 3px;
+    background: var(--bg-color-icon);
+    position: relative;
+    transition: background 0.2s;
+}
+
+.icon::before,
+.icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: var(--bg-color-icon);
+    left: 0;
+    transition: transform 0.2s;
+}
+
+.icon::before {
+    top: -8px;
+}
+
+.icon::after {
+    bottom: -8px;
+}
+
+.menu-toggle:hover .icon,
+.menu-toggle:hover .icon::before,
+.menu-toggle:hover .icon::after {
+    background: var(--accent-color);
+}
+
+/*штука которая при нажатии кнопки затемняет фон*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+    z-index: 150;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Боковая панель */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-color);
+    color: var( --primary-text);
+    padding: 2rem 1.5rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+    z-index: 200;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Кнопка что бы закрыть панель */
+.close-btn {
+    background: none;
+    border: none;
+    color: var( --primary-text);
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    margin-top: 3rem;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar nav ul li a {
+    color: var( --primary-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+.nav a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--primary-text);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* Основной контент */
+main {
+    flex: 3;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Футер */
+.footer {
+    margin-top: 3rem;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    color: var(--secondary-text);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    text-align: left;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Блок анимации */
+.animation {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+

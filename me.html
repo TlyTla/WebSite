@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--SIO-->
+    <meta name="description" content="Описание сайта для SIO">
+    <meta name="keywords" content="вашиключивые слова сайта">
+    <meta name="author" content="Имя или компания">
+
+    <!--соц сети-->
+    <meta property="og:title" content="название для соц сетей">
+    <meta property="og:description" content="описание сайта для соц сетей">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="HTML5_logo_and_wordmark.svg.png">
+    
+    <!--Фавикон-->
+    <link rel="icon" href="HTML5_logo_and_wordmark.svg.png" type="image/x-icon">
+    
+    <!--Стили-->
+    <link rel="stylesheet" href="css/me.css">
+
+
+    <!--GSAP-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/TextPlugin.min.js"></script>
+    
+    <title>Мой сайт</title>
+</head>
+<body>
+
+    <button class="menu-toggle" aria-label="Открыть меню">
+        <span class="icon"></span>
+    </button>
+
+    <div class="overlay"></div>
+
+    <aside class="sidebar">
+        <button class="close-btn" aria-label="Закрыть меню">✕</button>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="me.html">Обо мне</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="https://github.com/TlyTla">GitHub</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </nav>
+    </aside>
+    
+    <!--основной контент-->
+    <main class="main">
+        <h1 class="page-title">Внимание!!!!</h1>
+        <p>Я не знал что сделать в данном разделе поэтому я просто сделал разные прикольные штуки например боб так же aside.</p>
+    </main>
+    
+    <footer class="footer">
+          <div class="container">
+                <div class="footer-content">
+                    <div class="all">
+                        <div class="copy">
+                            <p>&copy; 2026 Мой сайт для экзамена по HTML</p>
+                        </div>
+                        <div class="animation">
+                            <div class="box">боб</div>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3> контакты</h3>
+                        <p>Email: pashkaPyk8@gmail.com</p>
+                        <p>Tel: 896969696969</p>
+                    </div>
+
+                     <div class="footer-section">
+                        <h3> быстрые ссылки</h3>
+                        <ul>
+                            <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B4%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C?ysclid=mm0e9kvr1f103321643">конфедициальность</a></li>
+                            <li><a href="https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D0%B5?ysclid=mm0eaz5mu5683779917">условия</a></li>
+                            <li><a href="#">моя политика</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script src="js/sidebar.js"></script>
+    <script src="js/animation.js"></script>
+</body>
+</html>
